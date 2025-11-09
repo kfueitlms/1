@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>KFUEIT - Mock Student Portal (Single File)</title>
+<title>KFUEIT -  Student Portal (Single File)</title>
 
 <!-- ====== STYLES (single-file) ====== -->
 <style>
@@ -116,11 +115,11 @@
 <div id="loginWrap">
   <div id="loginBox" role="dialog" aria-labelledby="loginTitle">
     <h2 id="loginTitle">My KFUEIT Login</h2>
-    <input id="inpRoll" placeholder="Enter Roll Number (e.g. HUSS241107026)" autocomplete="off" />
+    <input id="inpRoll" placeholder="Enter Roll Number (e.g. HUSS.....)" autocomplete="off" />
     <input id="inpPass" type="password" placeholder="Enter Password" autocomplete="off" />
     <button class="login-btn" onclick="doLogin()">Login</button>
     <div class="err" id="loginError"></div>
-    <p class="small" style="margin-top:10px;color:#444">Roll: <strong>HUSS241107026</strong> &nbsp; | &nbsp; Pass: <strong>Amn@112</strong></p>
+    <p class="small" style="margin-top:10px;color:#444">Roll: <strong>HUSS000000000</strong> &nbsp; | &nbsp; Pass: <strong>Abc123</strong></p>
   </div>
 </div>
 
@@ -128,14 +127,15 @@
 <header>
   <div class="topbar">
     <div class="brand">
-      <div class="logo-box">KF</div>
+
+      <div><img src="images-removebg-preview.png"class="logo-box"style="width:60px; height:60px;"
       <div>
-        <div style="font-weight:800">My KFUEIT</div>
+        
         <div style="font-size:12px;opacity:0.9">Kh. Fareed University of Engineering & IT</div>
       </div>
     </div>
     <div class="top-right">
-      <span id="welcomeTxt">Welcome — Guest</span>
+      <span id="welcomeTxt">Welcome — student</span>
       <span class="top-sep"> &nbsp; | &nbsp; </span>
       <span class="logout-link" onclick="triggerLogout()">Logout</span>
     </div>
@@ -149,8 +149,9 @@
     <div class="menu-item">Manuals</div>
     <div class="menu-item">Software</div>
     <div class="menu-item">Timetable</div>
-    <div class="menu-item">Home</div>
-    <div class="menu-item">My Profile</div>
+    <div class="menu-item" onclick="navigateTo('dashboard')">Home</div>
+<div class="menu-item" onclick="navigateTo('profile')">My Profile</div>
+
   </nav>
 </header>
 
@@ -158,6 +159,38 @@
 <div class="layout">
 
   <!-- Left column: main pages -->
+<!-- MY PROFILE PAGE -->
+<section id="profile" class="card page">
+  <div class="heading">
+    <h2>My Profile</h2>
+    <button class="back-btn" onclick="navigateTo('dashboard')">Back</button>
+  </div>
+
+  <div style="display:flex;align-items:center;gap:20px;margin-bottom:15px;">
+    <img src="Screenshot 2025-11-01 170031.png" alt="Profile Photo"
+      style="width:130px;height:130px;border-radius:10px;border:1px solid #ddd;object-fit:cover;">
+    <div>
+      <p><strong>Name:</strong> MUHAMMAD MUBASHIR</p>
+      <p><strong>Registration #:</strong> HUSS241107026</p>
+      <p><strong>Program:</strong> BS International Relations</p>
+      <p><strong>Department:</strong> Social Sciences</p>
+      <p><strong>Email:</strong> mubashermubasher33@gmail.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLEARANCE PAGE -->
+<section id="clearance" class="card page">
+  <div class="heading">
+    <h2>My Clearance</h2>
+    <button class="back-btn" onclick="navigateTo('dashboard')">Back</button>
+  </div>
+
+  <p style="font-size:18px;color:green;font-weight:600;margin-top:20px;">
+    ✅ All dues are clear. Enjoy your semester!
+  </p>
+</section>
+
   <main>
 
     <!-- DASHBOARD (default visible after login) -->
@@ -243,7 +276,7 @@
       </div>
 
       <div style="display:flex;align-items:center;gap:18px;margin-bottom:12px;">
-        <img id="studentPhoto" src="efd4e4b3-3cef-48be-8f64-4230e071222a.png" alt="photo" style="width:120px;height:120px;border-radius:8px;object-fit:cover;border:1px solid #ddd">
+        <img id="studentPhoto" src="Screenshot 2025-11-01 170031.png" alt="photo" style="width:120px;height:120px;border-radius:8px;object-fit:cover;border:1px solid #ddd">
         <div>
           <div style="font-weight:700">Student Name: MUHAMMAD MUBASHIR</div>
           <div class="small">Registration #: HUSS241107026</div>
@@ -258,11 +291,11 @@
         <tbody>
           <tr><td>SSCI-2131 Civics & Community Engagement</td><td>B-</td><td>2.7</td><td>2</td><td>5.40</td></tr>
           <tr><td>HUSS-1109 Fables & Literature</td><td>C</td><td>2.0</td><td>2</td><td>4.00</td></tr>
-          <tr><td>ENGL-1118 Functional English</td><td>D+</td><td>1.3</td><td>3</td><td>3.90</td></tr>
+          <tr><td>ENGL-1118 Functional English</td><td>B</td><td>1.3</td><td>3</td><td>3.90</td></tr>
           <tr><td>PAKS-1121 Ideology & Constitution of Pakistan</td><td>B+</td><td>3.3</td><td>2</td><td>6.60</td></tr>
           <tr><td>IRRE-1101 Intro to Int'l Relations</td><td>D</td><td>1.0</td><td>3</td><td>3.00</td></tr>
           <tr><td>SSCI-2126 Intro to Psychology</td><td>A-</td><td>3.7</td><td>2</td><td>7.40</td></tr>
-          <tr><td>URDU-1112 Urdu Adab</td><td>D+</td><td>1.3</td><td>3</td><td>3.90</td></tr>
+          <tr><td>URDU-1112 Urdu Adab</td><td>B+</td><td>1.3</td><td>3</td><td>3.90</td></tr>
           <tr style="font-weight:700"><td colspan="3" style="text-align:right">SGPA (Semester 1)</td><td>17</td><td>2.81</td></tr>
         </tbody>
       </table>
@@ -271,9 +304,9 @@
       <table style="margin-bottom:12px">
         <thead><tr><th>Course</th><th>Grade</th><th>Grade Point</th><th>Credit Hours</th><th>Grade Points Earned</th></tr></thead>
         <tbody>
-          <tr><td>ENGL-2114 Expository Writing</td><td>D+</td><td>1.3</td><td>3</td><td>3.90</td></tr>
+          <tr><td>ENGL-2114 Expository Writing</td><td>A+</td><td>1.3</td><td>3</td><td>3.90</td></tr>
           <tr><td>IRRE-1102 Int'l Relations in New Millennium</td><td>D+</td><td>1.3</td><td>3</td><td>3.90</td></tr>
-          <tr><td>COSC-1105 Introduction to ICT</td><td>C-</td><td>1.7</td><td>2</td><td>3.40</td></tr>
+          <tr><td>COSC-1105 Introduction to ICT</td><td>C+</td><td>1.7</td><td>2</td><td>3.40</td></tr>
           <tr><td>COSC-1205 Introduction to ICT-Lab</td><td>B+</td><td>3.3</td><td>1</td><td>3.30</td></tr>
           <tr><td>MATH-1106 Quantitative Reasoning-I</td><td>D</td><td>1.0</td><td>3</td><td>3.00</td></tr>
           <tr><td>ENSC-1113 The Science of Global Challenges</td><td>B</td><td>3.0</td><td>3</td><td>9.00</td></tr>
@@ -331,7 +364,7 @@
 <!-- ====== JAVASCRIPT: navigation, login, attendance, PDF ====== -->
 <script>
   // FIXED credentials (per your request)
-  const VALID_ROLL = "HUSS241107026";
+  const VALID_ROLL = "Huss241107026";
   const VALID_PASS = "Amn@112";
 
   const pages = ["dashboard","enrollments","transcript","fee","plan","clearance","hostel","survey"];
