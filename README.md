@@ -133,7 +133,7 @@
     <img src="images-removebg-preview.png" class="logo-box" style="width:60px; height:60px;">
   </div>
   <div>
-    <div style="font-size:12px;opacity:0.9">Kh. Fareed University of Engineering & IT</div>
+    
   </div>
 </div>
 
